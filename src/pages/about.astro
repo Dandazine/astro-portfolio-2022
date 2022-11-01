@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import AboutAccordion from "../components/AboutAccordion";
+---
+
+<Layout title="About - Panda">
+  <div class="mx-6">
+    <!-- About me -->
+    <section>
+      <PageBanner text="About Me!" />
+      <h1 class="text-3xl text-primary">About</h1>
+      <p class="text-light">
+        I'm a front-end web developer focused on creating responsive websites
+        using javascript frameworks such as React, Astro, and Svelte. I enjoy
+        the process of problem solving when coding with a language I am not
+        familiar with, or working on a function I haven't used before.
+      </p>
+    </section>
+    <AboutAccordion client:load />
+  </div>
+</Layout>

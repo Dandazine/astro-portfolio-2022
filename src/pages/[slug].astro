@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+
+export async function getStaticPaths() {
+  const archive = await Astro.glob("../archive/*.md");
+  return archive.map((single) => ({
+    params: {
+      slug: single.frontmatter.slug,
+    },
+    props: {
+      single,
+    },
+  }));
+}
+
+const { Content, frontmatter } = Astro.props.single;
+---
+
+<Layout title={frontmatter.title}>
+  <h1>test</h1>
+  <div class="mx-6">
+    <!-- About me -->
+    <section>
+      <PageBanner text={frontmatter.title} />
+      <a href="/projects">Go back to Projects</a>
+      <h1>{frontmatter.title}</h1>
+      <Content />
+    </section>
+  </div>
+</Layout>

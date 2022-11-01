@@ -1,5 +1,50 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+import Icons from "../components/Icons.astro";
+import TSicon from "../assets/icons8-typescript.svg";
+import ReactIcon from "../assets/icons8-react.svg";
+import SvelteIcon from "../assets/icons8-svelte.svg";
+import TailwindIcon from "../assets/icons8-tailwindcss.svg";
+import NextIcon from "../assets/icons8-next.js.svg";
 ---
 
-<Layout title="Home - Panda"><h1>hi</h1></Layout>
+<Layout title="Home - Panda">
+  <section class="w-full">
+    <PageBanner text="Welcome!" />
+
+    <!-- Hero section for landing page  -->
+    <div class="max-w-max mx-auto my-16 p-6">
+      <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl text-primary py-3">
+        Danial Daneshfar
+      </h1>
+      <h2 class="text-2xl text-secondary pt-1 pb-4">Web Developer</h2>
+      <!-- Animated Icons Div  -->
+      <div
+        class="flex justify-between flex-wrap max-w-[272px] mx-auto mb-11 mt-3"
+      >
+        <!-- Typescript Icon https://icons8.com -->
+        <Icons icon={TSicon} alt="Typescript icon" />
+        <!-- React Icon https://icons8.com -->
+        <Icons icon={ReactIcon} alt="React icon" />
+        <!-- Next Icon https://icons8.com -->
+        <Icons icon={NextIcon} alt="NextJs Icon" />
+        <!-- Tailwind CSS Icon https://icons8.com -->
+        <Icons icon={TailwindIcon} alt="Tailwind icon" />
+        <!-- Svelte Icon from https://icons8.com  -->
+        <Icons icon={SvelteIcon} alt="Svelte icon" />
+      </div>
+      <p class="pb-12 text-light">Check out the projects I've done!</p>
+      <a
+        href="./projects"
+        class="px-12 bg-primary py-1 hover:bg-secondary active:bg-neutral active:text-light"
+        >Projects</a
+      >
+      <a
+        href="./about"
+        class="ml-0.5 px-1 py-1 text-light hover:text-secondary active:text-secondary hover:border-b hover:border-current"
+        >About me</a
+      >
+    </div>
+  </section>
+</Layout>

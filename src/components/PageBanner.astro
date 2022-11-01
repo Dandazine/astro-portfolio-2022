@@ -1,0 +1,15 @@
+---
+export interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<div class="pt-6">
+  <p
+    class="text-center bg-neutral text-light mx-auto max-w-max px-12 py-1 block hover:bg-primary hover:text-dark active:bg-secondary"
+  >
+    {text}
+  </p>
+</div>

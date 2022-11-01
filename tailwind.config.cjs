@@ -18,6 +18,7 @@ module.exports = {
       error: "#f87272",
       light: "#f2f2f2",
       dark: "#2a2d3a",
+      text: "#f2f2f2",
     },
     extend: {},
   },

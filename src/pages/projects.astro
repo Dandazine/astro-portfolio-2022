@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+const archive = await Astro.glob("../archive/*.md");
+---
+
+<Layout title="Projects - Panda">
+  <!-- Hero and Featured Projects Section  -->
+  <section>
+    <PageBanner text="Projects" />
+    <h1>Projects</h1>
+    <h2>Featured Projects</h2>
+    <div>
+      {
+        archive.map((single) => (
+          <div>
+            {!single.frontmatter.featured && (
+              <a href={`/${single.frontmatter.slug}`}>
+                <h3 class="text-text">{single.frontmatter.title}</h3>
+                <p>{single.frontmatter.excerpt}</p>
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

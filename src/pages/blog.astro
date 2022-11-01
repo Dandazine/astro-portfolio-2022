@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageBanner from "../components/PageBanner.astro";
+const posts = await Astro.glob("../posts/*.md");
+---
+
+<Layout title="Blog - Panda">
+  <!-- Featured Projects Section  -->
+  <section>
+    <PageBanner text="Blog" />
+    <h1>Blog</h1>
+    <div>
+      {
+        posts.map((post) => (
+          <div>
+            <h3>{post.frontmatter.title}</h3>
+            <p>{post.frontmatter.excerpt}</p>
+            <a href={`/${post.frontmatter.slug}`} class="btn">
+              Read more
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
