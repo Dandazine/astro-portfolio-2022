@@ -14,7 +14,7 @@ const archive = await Astro.glob("../archive/*.md");
       {
         archive.map((single) => (
           <div>
-            {!single.frontmatter.featured && (
+            {single.frontmatter.featured && !single.frontmatter.blog && (
               <a href={`/${single.frontmatter.slug}`}>
                 <h3 class="text-text">{single.frontmatter.title}</h3>
                 <p>{single.frontmatter.excerpt}</p>

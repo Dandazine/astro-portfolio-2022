@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PageBanner from "../components/PageBanner.astro";
-const posts = await Astro.glob("../posts/*.md");
+const archive = await Astro.glob("../archive/*.md");
 ---
 
 <Layout title="Blog - Panda">
@@ -11,13 +11,14 @@ const posts = await Astro.glob("../posts/*.md");
     <h1>Blog</h1>
     <div>
       {
-        posts.map((post) => (
+        archive.map((single) => (
           <div>
-            <h3>{post.frontmatter.title}</h3>
-            <p>{post.frontmatter.excerpt}</p>
-            <a href={`/${post.frontmatter.slug}`} class="btn">
-              Read more
-            </a>
+            {single.frontmatter.blog && (
+              <a href={`/${single.frontmatter.slug}`}>
+                <h3 class="text-text">{single.frontmatter.title}</h3>
+                <p>{single.frontmatter.excerpt}</p>
+              </a>
+            )}
           </div>
         ))
       }
