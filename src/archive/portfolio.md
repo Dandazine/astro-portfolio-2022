@@ -8,7 +8,7 @@
         based on high-fidelity prototype wireframes created using Adobe XD. Styled using
         Tailwind CSS.
     content: lorem ipsum lol
-    imgPath: "../src/assets/dog.png"
+    imgPath: "/src/assets/dog.png"
     date: 2022-08
     author: Danial Daneshfar
 ---

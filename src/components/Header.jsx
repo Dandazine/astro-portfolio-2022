@@ -80,7 +80,7 @@ const Header = () => {
         <div className="mx-auto flex w-full flex-col items-start justify-center gap-y-2.5 py-11">
           {/* <!-- Projects  -->  */}
           <a
-            href="./projects"
+            href="/projects"
             className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
           >
             <svg
@@ -101,7 +101,7 @@ const Header = () => {
           </a>
           {/* <!-- About Div  -->  */}
           <a
-            href="./about"
+            href="/about"
             className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
           >
             <svg
