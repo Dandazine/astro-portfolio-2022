@@ -2,7 +2,7 @@
     featured: false
     blog: true
     title: Post1
-    slug: nomi
+    slug: post1
     excerpt: lorem ipsum text
     date: 2022-07
     author: Danial Daneshfar

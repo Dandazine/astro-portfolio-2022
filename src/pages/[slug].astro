@@ -17,15 +17,22 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.single;
 ---
 
-<Layout title={frontmatter.title}>
-  <h1>test</h1>
+<Layout title={"Panda - " + frontmatter.title}>
   <div class="mx-6">
     <!-- About me -->
     <section>
       <PageBanner text={frontmatter.title} />
-      <a href="/projects">Go back to Projects</a>
-      <h1>{frontmatter.title}</h1>
-      <Content />
+      {frontmatter.blog ? 
+        <a href="./blog">Go back to Blog</a> 
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.content}</p>
+        <Content /> 
+        :
+        <a href="./projects">Go back to Projects</a> 
+        <h1>{frontmatter.title}</h1>
+        <p>{frontmatter.content}</p>
+        <img src={frontmatter.imgPath} alt={frontmatter.imgPath}>
+      }
     </section>
   </div>
 </Layout>

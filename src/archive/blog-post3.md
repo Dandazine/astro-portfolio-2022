@@ -1,8 +1,8 @@
 ---
     featured: false
     blog: true
-    title: Summer Panda Cafe
-    slug: summerpanda
+    title: Post3
+    slug: post-3
     excerpt: lorem ipsum text
     date: 2022-10
     author: Danial Daneshfar

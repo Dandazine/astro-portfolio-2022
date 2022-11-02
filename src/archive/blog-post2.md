@@ -1,8 +1,8 @@
 ---
     featured: false
     blog: true
-    title: Portfolio
-    slug: portfolio
+    title: Post2
+    slug: post-2
     excerpt: lorem ipsum text
     date: 2022-08
     author: Danial Daneshfar

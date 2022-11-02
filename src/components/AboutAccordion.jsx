@@ -12,13 +12,14 @@ const AboutAccordion = () => {
   return (
     <section className="pb-6">
       {aboutData.map((sct, i) => (
-        <div key={i} className="my-3 w-full bg-neutral p-3">
-          <div
-            className="flex cursor-pointer justify-between"
-            onClick={() => {
-              toggleSection(i);
-            }}
-          >
+        <div
+          key={i}
+          className="my-3 w-full cursor-pointer bg-neutral p-3 "
+          onClick={() => {
+            toggleSection(i);
+          }}
+        >
+          <div className="flex justify-between">
             <h2 className="text-secondary">
               <span className="text-info">Q.{i + 1}</span> {sct.title}
             </h2>

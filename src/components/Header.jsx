@@ -122,7 +122,7 @@ const Header = () => {
           </a>
           {/* <!-- Blog Div  -->  */}
           <a
-            href="./blog"
+            href="/blog"
             className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
           >
             <svg
