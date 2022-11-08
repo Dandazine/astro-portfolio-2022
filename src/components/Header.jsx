@@ -25,7 +25,7 @@ const Header = () => {
           aria-label="open"
           onClick={() => setIsOpen(true)}
           id="open-nav-btn"
-          className={isOpen ? "hidden" : "mr-1 text-light hover:text-primary"}
+          className={isOpen ? "hidden" : "mr-1 text-text hover:text-primary"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const Header = () => {
           aria-label="close"
           id="close-nav-btn"
           onClick={() => setIsOpen(false)}
-          className={isOpen ? "mr-1 text-light hover:text-primary" : "hidden"}
+          className={isOpen ? "mr-1 text-text hover:text-primary" : "hidden"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ const Header = () => {
           {/* <!-- Projects  -->  */}
           <a
             href="/projects"
-            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
+            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-text hover:bg-neutral hover:text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const Header = () => {
           {/* <!-- About Div  -->  */}
           <a
             href="/about"
-            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
+            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-text hover:bg-neutral hover:text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const Header = () => {
           {/* <!-- Blog Div  -->  */}
           <a
             href="/blog"
-            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-light hover:bg-neutral hover:text-primary"
+            className="flex w-full flex-wrap items-center justify-start gap-4 py-3 pl-5 text-lg text-text hover:bg-neutral hover:text-primary"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +184,7 @@ const Header = () => {
           </a>
         </div>
         {/* <!-- Theme Buttons Div  -->  */}
-        <div className="flex w-full flex-wrap justify-center gap-3 py-6 text-light">
+        <div className="flex w-full flex-wrap justify-center gap-3 py-6 text-text">
           {/* <!-- Light Mode and Dark Mode -->  */}
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -14,12 +14,41 @@ const archive = await Astro.glob("../archive/*.md");
       {
         archive.map((single) => (
           <div>
-            <a href={`/${single.frontmatter.slug}`}>
-              <h3 class="text-text">{single.frontmatter.title}</h3>
-              <p>{single.frontmatter.excerpt}</p>
-            </a>
+            {!single.frontmatter.blog && single.frontmatter.featured && (
+              <a href={`/${single.frontmatter.slug}`}>
+                <h3 class="text-text">{single.frontmatter.title}</h3>
+                <p>{single.frontmatter.excerpt}</p>
+              </a>
+            )}
           </div>
         ))
+      }
+    </div>
+  </section>
+  <!-- Filtered Projects  -->
+  <section>
+    <!-- Filter  -->
+    <div></div>
+    <!-- Project list  -->
+    <div class="flex flex-wrap justify-center gap-6">
+      {
+        archive.map(
+          (single) =>
+            !single.frontmatter.blog && (
+              <a
+                href={`/${single.frontmatter.slug}`}
+                class="bg-neutral h-96 w-96 overflow-y-scroll"
+              >
+                <div class="">
+                  <div>
+                    <img src={single.frontmatter.thumbnail} alt="" />
+                  </div>
+                  <h3 class="text-text">{single.frontmatter.title}</h3>
+                  <p>{single.frontmatter.excerpt}</p>
+                </div>
+              </a>
+            )
+        )
       }
     </div>
   </section>

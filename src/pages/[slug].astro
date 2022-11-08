@@ -23,15 +23,16 @@ const { Content, frontmatter } = Astro.props.single;
     <section>
       <PageBanner text={frontmatter.title} />
       {frontmatter.blog ? 
-        <a href="./blog">Go back to Blog</a> 
+        <a href="/blog">Go back to Blog</a> 
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.content}</p>
         <Content /> 
         :
-        <a href="./projects">Go back to Projects</a> 
+        <a href="/projects">Go back to Projects</a> 
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.content}</p>
         <img src={frontmatter.imgPath} alt={frontmatter.imgPath}>
+        <Content />
       }
     </section>
   </div>
