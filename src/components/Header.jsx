@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { SiteLogo } from "./SiteLogo";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   // State for menu
@@ -143,7 +144,7 @@ const Header = () => {
           </a>
         </div>
         {/* <!-- Social Media Div -->  */}
-        <div className="flex w-full flex-wrap items-center justify-center gap-2.5 py-4 text-primary">
+        <div className="flex w-full flex-wrap items-center justify-center gap-2.5 py-4 text-primary dark:text-secondary">
           <a href="mailto:danial.daneshfar@gmail.com">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -202,6 +203,7 @@ const Header = () => {
           </svg>
 
           <input type="checkbox" name="" id="" />
+          <ThemeToggle />
         </div>
       </div>
     </nav>
