@@ -21,9 +21,9 @@
 
 ## Summary
 
-I made a portfolio with the intention of displaying all my most recent projects, blog posts, and to advertise my freelancing Web Development services, Dandazine. This portfolio project was not only a great practice with React, but also a fantastic introduction to Astro.js Markdown and Tailwind CSS. The portfolio features a light and dark theme, responsive sizing for header based on viewport, dynamic pages, and SEO optimization.
+I made a portfolio with the intention of displaying all my most recent projects, blog posts, and to advertise my freelancing Web Development services, Dandazine. This portfolio project was not only a great practice with **React**, but also a fantastic introduction to **Astro.js** **Markdown** and **Tailwind CSS**. The portfolio features a light and dark theme, responsive sizing for header based on viewport, dynamic pages, and SEO optimization.
 
-Styling is all handled by tailwind CSS, and all the icons have been acquired from their respective documentation.
+Styling is all handled by **tailwind CSS**, and all the icons have been acquired from their respective documentation.
 
 ## Development
 
