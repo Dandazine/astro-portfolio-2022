@@ -10,23 +10,28 @@ const AboutAccordion = () => {
     setActive(i);
   };
   return (
-    <section className="pb-6">
+    <section className="mx-auto max-w-7xl px-11 pb-6 ">
       {aboutData.map((sct, i) => (
         <div
           key={i}
-          className="my-3 w-full cursor-pointer p-3 "
+          className="my-4 w-full cursor-pointer bg-liNH p-3 text-dark hover:bg-nav dark:bg-daNH dark:text-light dark:hover:bg-darkNav"
           onClick={() => {
             toggleSection(i);
           }}
         >
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <h2 className="">
-              <span className="text-info">Q.{i + 1}</span> {sct.title}
+              <span className="pr-1 text-secondary dark:text-info">
+                Q.{i + 1}
+              </span>{" "}
+              {sct.title}
             </h2>
-            <span className="text-info">{active === i ? "-" : "+"}</span>
+            <span className="text-secondary dark:text-info">
+              {active === i ? "-" : "+"}
+            </span>
           </div>
           <div className={active === i ? "block" : "hidden"}>
-            <p className="">{sct.content}</p>
+            <p className="p-3">{sct.content}</p>
           </div>
         </div>
       ))}
