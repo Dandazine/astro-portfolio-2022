@@ -14,19 +14,19 @@ const AboutAccordion = () => {
       {aboutData.map((sct, i) => (
         <div
           key={i}
-          className="my-3 w-full cursor-pointer bg-neutral p-3 "
+          className="my-3 w-full cursor-pointer p-3 "
           onClick={() => {
             toggleSection(i);
           }}
         >
           <div className="flex justify-between">
-            <h2 className="text-secondary">
+            <h2 className="">
               <span className="text-info">Q.{i + 1}</span> {sct.title}
             </h2>
             <span className="text-info">{active === i ? "-" : "+"}</span>
           </div>
           <div className={active === i ? "block" : "hidden"}>
-            <p className="text-text">{sct.content}</p>
+            <p className="">{sct.content}</p>
           </div>
         </div>
       ))}

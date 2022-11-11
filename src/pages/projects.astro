@@ -16,7 +16,7 @@ const archive = await Astro.glob("../archive/*.md");
           <div>
             {!single.frontmatter.blog && single.frontmatter.featured && (
               <a href={`/${single.frontmatter.slug}`}>
-                <h3 class="text-text">{single.frontmatter.title}</h3>
+                <h3 class="">{single.frontmatter.title}</h3>
                 <p>{single.frontmatter.excerpt}</p>
               </a>
             )}
@@ -35,15 +35,12 @@ const archive = await Astro.glob("../archive/*.md");
         archive.map(
           (single) =>
             !single.frontmatter.blog && (
-              <a
-                href={`/${single.frontmatter.slug}`}
-                class="bg-neutral h-96 w-96"
-              >
+              <a href={`/${single.frontmatter.slug}`} class=" h-96 w-96">
                 <div class="">
                   <div>
                     <img src={single.frontmatter.thumbnail} alt="" />
                   </div>
-                  <h3 class="text-text">{single.frontmatter.title}</h3>
+                  <h3 class="">{single.frontmatter.title}</h3>
                   <p>{single.frontmatter.excerpt}</p>
                 </div>
               </a>
