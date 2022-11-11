@@ -7,6 +7,7 @@ import ReactIcon from "../assets/icons8-react.svg";
 import SvelteIcon from "../assets/icons8-svelte.svg";
 import TailwindIcon from "../assets/icons8-tailwindcss.svg";
 import NextIcon from "../assets/icons8-next.js.svg";
+import AstroIcon from "/assets/icons/favicon.svg";
 ---
 
 <Layout title="Home - Panda">
@@ -14,36 +15,28 @@ import NextIcon from "../assets/icons8-next.js.svg";
     <PageBanner text="Welcome!" />
 
     <!-- Hero section for landing page  -->
-    <div class="max-w-max mx-auto my-20 p-6">
+    <div
+      class="max-w-max mx-auto my-20 p-6 text-center md:mt-48 text-dark dark:text-light"
+    >
       <h1 class="text-3xl font-bold md:text-5xl lg:text-6xl py-3">
-        Danial Daneshfar
+        <span class="text-primary">Danial</span> Daneshfar
       </h1>
-      <h2 class="text-2xl pb-4">Web Developer</h2>
-      <p class="">
-        Specialized in Javascript, React, and Astro with a solid understanding
-        in building scalable and accessible websites.
-      </p>
+      <h2
+        class="text-2xl md:text-3xl lg:text-4xl pb-4 text-neutral dark:text-text"
+      >
+        Web Developer
+      </h2>
       <!-- Project and About link  -->
-      <div class="mt-11">
-        <p class="pb-3">Check out the projects I've done!</p>
-        <a href="./projects" class="px-12">Projects</a>
+      <div class="mt-16">
+        <p class="pb-3 md:text-xl lg:text-2xl mb-3">
+          Check out the projects I've done!
+        </p>
         <a
-          href="./about"
-          class="ml-0.5 px-1 py-1 hover:border-b hover:border-current">About</a
+          href="./projects"
+          class="px-12 py-1.5 bg-secondary text-light dark:bg-daSe dark:text-dark dark:hover:bg-secondary hover:bg-daSe"
+          >Projects</a
         >
       </div>
-      <!-- Animated Icons Div  -->
-      <!-- <div class="flex justify-between flex-wrap max-w-[272px] mx-auto my-12"> -->
-      <!-- Typescript Icon https://icons8.com -->
-      <!-- <Icons icon={TSicon} alt="Typescript icon" /> -->
-      <!-- React Icon https://icons8.com -->
-      <!-- <Icons icon={ReactIcon} alt="React icon" /> -->
-      <!-- Next Icon https://icons8.com -->
-      <!-- <Icons icon={NextIcon} alt="NextJs Icon" /> -->
-      <!-- Tailwind CSS Icon https://icons8.com -->
-      <!-- <Icons icon={TailwindIcon} alt="Tailwind icon" /> -->
-      <!-- Svelte Icon from https://icons8.com  -->
-      <!-- <Icons icon={SvelteIcon} alt="Svelte icon" /> -->
     </div>
   </section>
 </Layout>

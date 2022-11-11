@@ -3,7 +3,8 @@
     blog: false
     title: Nomi
     slug: nomi
-    thumbnail: /test.png
+    thumbnail: /assets/nomi-thumbnail.jpg
+    alt: Nomi Front page
     excerpt: 
         Nomi is a movie database that was created using NextJS. Powered by the TMDB API, Nomi can display the hottest recent movies, and also has a functional search and authentication system.
     author: Danial Daneshfar, Jalen Cameron, Jed Borseth, Reilly LeClaire
@@ -15,8 +16,8 @@
         The challenge of this project was learning how to collaborate properly and effeciently in a group while working with a language we were not familiar with.
     solution:
         We spent quote a bit of time communicating and planning out our roles and tasks for this project. We split the group up to 2 developers and 2 designers with occasional overlap inbetween.
-    live: 
-    git:
+    live: https://nomi.danial.dev/
+    git: https://github.com/Dandazine/nomi
 ---
 
 ## Summary

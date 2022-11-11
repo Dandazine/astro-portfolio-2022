@@ -37,12 +37,12 @@ const Header = () => {
     },
   ];
   return (
-    <nav>
+    <header>
       {/* Mobile Nav Bar with menu toggle */}
       <button
         aria-label={isOpen ? "Close Menu" : "Open Menu"}
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-1 right-1 z-30 flex justify-end rounded-xl bg-nav text-dark dark:bg-darkNav dark:text-light dark:hover:text-daSe md:hidden"
+        className="fixed bottom-1 right-1 z-30 flex justify-end rounded-xl border bg-nav text-dark dark:bg-darkNav dark:text-light dark:hover:text-daSe md:hidden"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ const Header = () => {
           isOpen ? "fixed" : "hidden"
         } left-0 h-full w-full transform border-r bg-nav text-dark transition ease-in-out  dark:bg-darkNav dark:text-light sm:w-[200px] sm:max-w-[200px] md:relative md:translate-x-0 `}
       >
-        <div className="top-0 flex flex-col items-start justify-start md:sticky ">
+        <nav className="top-0 flex h-screen flex-col items-start justify-start md:sticky">
           {/* Site Logo and Name  */}
           <SiteLogo />
           {/* <!-- Navigation Links  -->  */}
@@ -103,8 +103,13 @@ const Header = () => {
               </a>
             ))}
           </div>
+          {/* <!-- Theme Buttons Div  -->  */}
+          <div className="mt-auto flex w-full flex-wrap justify-center gap-3 py-6 ">
+            {/* <!-- Light Mode and Dark Mode -->  */}
+            <ThemeToggle />
+          </div>
           {/* <!-- Social Media Div -->  */}
-          <div className="flex w-full flex-wrap items-center justify-center gap-2.5 py-4 ">
+          <div className=" flex w-full flex-wrap items-center justify-center gap-2.5 py-4">
             <a href="mailto:danial.daneshfar@gmail.com">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,14 +149,9 @@ const Header = () => {
               </svg>
             </a>
           </div>
-          {/* <!-- Theme Buttons Div  -->  */}
-          <div className="flex w-full flex-wrap justify-center gap-3 py-6 ">
-            {/* <!-- Light Mode and Dark Mode -->  */}
-            <ThemeToggle />
-          </div>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 

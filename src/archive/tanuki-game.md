@@ -3,7 +3,8 @@
     blog: false
     title: Tanuki Game
     slug: tanuki-game
-    thumbnail: /dog.png
+    thumbnail: /assets/tanuki-thumbnail.jpg
+    alt: Screenshot of the Tanuki Gameplay
     excerpt: 
         A simple JavaScript game where you have to chase and catch a dog who doesn't want to bathe.
     author: Danial Daneshfar
@@ -15,7 +16,7 @@
         Getting Tanuki to go around the screen without going completely off the viewport.
     solution:
         Got two variables to capture the screen's width and height when the function is called, and based my Math.random function with the results of the screen size in mind.
-    live: 
+    live: https://tanuki.danial.dev/
     git: https://github.com/Dandazine/tanuki-game
 ---
 

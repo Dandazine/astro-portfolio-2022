@@ -4,7 +4,8 @@
     title: Summer Panda
     slug: summerpanda
     excerpt: Summer Panda is an accessible Wordpress Eccommerce website designed and developed to fulfill the needs of a bingsu cafe.  
-    thumbnail:
+    thumbnail: /assets/no-pic.jpg
+    alt: No picture Available right now
     author: Danial Daneshfar, Jalen Cameron, Reilly LeClaire, Techin Toentian
     date: 2022-10
     tools: 

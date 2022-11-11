@@ -6,43 +6,79 @@ const archive = await Astro.glob("../archive/*.md");
 
 <Layout title="Projects - Panda">
   <!-- Hero and Featured Projects Section  -->
-  <section>
+  <section class="max-w-7xl mx-auto px-11 pb-11">
     <PageBanner text="Projects" />
-    <h1>Projects</h1>
-    <h2>Featured Projects</h2>
+    <h1
+      class="mt-11 text-3xl font-bold md:text-5xl lg:text-6xl py-3 text-center"
+    >
+      Projects
+    </h1>
     <div>
+      <h2
+        class="text-center text-2xl md:text-3xl lg:text-4xl pb-4 text-neutral dark:text-text"
+      >
+        Featured Projects
+      </h2>
       {
-        archive.map((single) => (
-          <div>
-            {!single.frontmatter.blog && single.frontmatter.featured && (
-              <a href={`/${single.frontmatter.slug}`}>
-                <h3 class="">{single.frontmatter.title}</h3>
-                <p>{single.frontmatter.excerpt}</p>
-              </a>
-            )}
-          </div>
-        ))
+        archive.map(
+          (single) =>
+            !single.frontmatter.blog &&
+            single.frontmatter.featured && (
+              <div class="bg-liNH dark:bg-daNH dark:hover:bg-darkNav w-full rounded-md p-1">
+                <a
+                  href={`/${single.frontmatter.slug}`}
+                  class="text-secondary dark:text-daSe hover:text-daSe"
+                >
+                  <img
+                    src={single.frontmatter.thumbnail}
+                    alt={single.frontmatter.alt}
+                  />
+                  <h3 class="pt-3 pb-1 text-center md:text-xl lg:text-2xl">
+                    {single.frontmatter.title}
+                  </h3>
+                  <p class="text-dark dark:text-light mx-auto max-w-xl pb-3">
+                    {single.frontmatter.excerpt}
+                  </p>
+                </a>
+              </div>
+            )
+        )
       }
     </div>
   </section>
   <!-- Filtered Projects  -->
-  <section>
-    <!-- Filter  -->
+  <section class="max-w-max mx-auto px-11">
+    <h2
+      class="text-center text-2xl md:text-3xl lg:text-4xl pb-4 text-neutral dark:text-text"
+    >
+      All Projects
+    </h2>
+    <!-- Filter -->
     <div></div>
-    <!-- Project list  -->
-    <div class="flex flex-wrap justify-center gap-6">
+    <!-- Project list -->
+    <div
+      class="justify-items-center gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-auto rounded-md"
+    >
       {
         archive.map(
           (single) =>
             !single.frontmatter.blog && (
-              <a href={`/${single.frontmatter.slug}`} class=" h-96 w-96">
-                <div class="">
-                  <div>
-                    <img src={single.frontmatter.thumbnail} alt="" />
-                  </div>
-                  <h3 class="">{single.frontmatter.title}</h3>
-                  <p>{single.frontmatter.excerpt}</p>
+              <a
+                href={`/${single.frontmatter.slug}`}
+                class="bg-liNH hover:bg-nav dark:bg-daNH dark:hover:bg-darkNav text-secondary dark:text-daSe hover:text-daSe  min-h-[350px] rounded-lg p-3 md:w-[270px]"
+              >
+                <div>
+                  <img
+                    src={single.frontmatter.thumbnail}
+                    alt={single.frontmatter.alt}
+                  />
                 </div>
+                <h3 class="pt-3 pb-1 text-center md:text-lg lg:text-xl">
+                  {single.frontmatter.title}
+                </h3>
+                <p class="text-dark dark:text-light">
+                  {single.frontmatter.excerpt}
+                </p>
               </a>
             )
         )

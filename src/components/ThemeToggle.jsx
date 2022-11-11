@@ -43,13 +43,15 @@ const ThemeToggle = () => {
   }, []);
 
   return loaded ? (
-    <div className=" inline-flex items-center rounded-3xl p-[1px]">
+    <div className=" inline-flex items-center rounded-3xl border p-[1px] ease-in-out">
       {themes.map((i) => {
         const checked = i === theme;
         return (
           <button
             key={i}
-            className=""
+            className={`${
+              checked ? "bg-daNH text-light dark:bg-liNH dark:text-dark" : ""
+            } cursor pointer rounded-3xl p-1.5 duration-150 ease-in`}
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
