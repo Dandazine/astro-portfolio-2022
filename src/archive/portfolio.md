@@ -36,11 +36,47 @@ Astro + React was my go-to when choosing a tech-stack. Astro is perfect for stat
 
 The highlight of this project was being able to map through, and write up all my projects in .md files. I had a lot of fun learning the syntax and the application of .md files. Compared to previous tech stacks I've used such as NextJS, Astro has a very easy way to display an archive of projects or blog posts, and sending their individual information to a dynamic page when the project is selected.
 
-![Test Image to test out markdown images](/test.png "test")
+    {
+        archive.map(
+            (single) =>
+            !single.frontmatter.blog && (
+                <a
+                href={`/${single.frontmatter.slug}`}
+                class="bg-liNH hover:bg-nav dark:bg-daNH dark:hover:bg-darkNav text-secondary dark:text-daSe hover:text-daSe  min-h-[350px] rounded-lg p-3 md:w-[270px]"
+                >
+                    <div>
+                        <img
+                        src={single.frontmatter.thumbnail}
+                        alt={single.frontmatter.alt}
+                        />
+                    </div>
+                    <h3 class="pt-3 pb-1 text-center md:text-lg lg:text-xl">
+                        {single.frontmatter.title}
+                    </h3>
+                    <p class="text-dark dark:text-light">
+                        {single.frontmatter.excerpt}
+                    </p>
+                </a>
+            )
+        )
+    }
+
 
 After getting the archive, you can then create a dynamic page which then imports the information sent to it from your archives.
 
-![Test Image to test out markdown images](/test.png "test")
+    export async function getStaticPaths() {
+    const archive = await Astro.glob("../archive/*.md");
+    return archive.map((single) => ({
+        params: {
+        slug: single.frontmatter.slug,
+        },
+        props: {
+        single,
+        },
+    }));
+    }
+
+    const { Content, frontmatter } = Astro.props.single;
 
 ## Styling
 

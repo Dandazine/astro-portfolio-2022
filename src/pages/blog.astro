@@ -4,23 +4,36 @@ import PageBanner from "../components/PageBanner.astro";
 const archive = await Astro.glob("../archive/*.md");
 ---
 
-<Layout title="Blog - Panda">
+<Layout title="Blog - Danial">
   <!-- Featured Projects Section  -->
-  <section>
+  <section class="max-w-7xl mx-auto px-11 pb-11">
     <PageBanner text="Blog" />
-    <h1>Blog</h1>
-    <div>
+    <h1
+      class="mt-11 text-3xl font-bold md:text-5xl lg:text-6xl py-3 text-center"
+    >
+      Blog
+    </h1>
+    <h2
+      class="text-center text-2xl md:text-3xl lg:text-4xl pb-4 text-neutral dark:text-text"
+    >
+      Welcome to my blog!
+    </h2>
+    <div
+      class="justify-items-center gap-8 grid grid-cols-1 auto-rows-auto rounded-md"
+    >
       {
-        archive.map((single) => (
-          <div>
-            {single.frontmatter.blog && (
-              <a href={`/${single.frontmatter.slug}`}>
-                <h3 class="text-text">{single.frontmatter.title}</h3>
+        archive.map(
+          (single) =>
+            single.frontmatter.blog && (
+              <a
+                href={`/${single.frontmatter.slug}`}
+                class="bg-liNH hover:bg-nav dark:bg-daNH dark:hover:bg-darkNav text-secondary dark:text-daSe hover:text-daSe w-full rounded-md p-3 "
+              >
+                <h3>{single.frontmatter.title}</h3>
                 <p>{single.frontmatter.excerpt}</p>
               </a>
-            )}
-          </div>
-        ))
+            )
+        )
       }
     </div>
   </section>

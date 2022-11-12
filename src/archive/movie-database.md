@@ -30,9 +30,75 @@ Our styling was done with **Sass**, a CSS extension, and **Material UI**.
 
 As one of the two Developers, I worked on the functionality of the site, and helped clean up non-semantic code. My biggest contribution to the website was making sure the search function works and the website can return the correct results when a user inputs their search into the search field. I also helped link the movie to its respective page using NextJs's Link feature.
 
-![Test Image to test out markdown images](/test.png "test")
+    const [mobileSearch, setMobileSearch] = useState(false);
 
-![Test Image to test out markdown images](/test.png "test")
+    useEffect(() => {
+        const mediaWatcher = window.matchMedia("(max-width: 639px)");
+        setMobile(mediaWatcher.matches);
+        function updateIsNarrowScreen(e) {
+        setMobile(e.matches);
+        setResponse("");
+        if (!e.matches) {
+            setMenu(false);
+            setMobileSearch(false);
+        }
+        }
+        mediaWatcher.addEventListener("change", updateIsNarrowScreen);
+        return function cleanup() {
+        mediaWatcher.removeEventListener("change", updateIsNarrowScreen);
+        };
+    }, []);
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+        if (search?.length <= 0) {
+        setResponse("");
+        return;
+        }
+        if (!search) {
+        setResponse("");
+        return;
+        }
+        const fetchQuery = await fetch(
+        `https://api.themoviedb.org/3/search/movie?api_key=565e5a5d8e336b7cee4dc5ea476e08f6&query=${search}`
+        );
+        console.log(fetchQuery);
+        fetchQuery.json().then((response) => {
+        setResponse(response);
+        });
+    };
+
+    function handleContent(e) {
+        setSearch(e.target.value);
+        if (e.target.value.length <= 0) {
+        setResponse("");
+        }
+    }
+
+    const Search = ({ handleSearch, handleContent, mobile }) => {
+    return (
+        <div className={`${!mobile && "search"}`}>
+        <form
+            onSubmit={(e) => {
+            {
+                handleSearch(e);
+            }
+            }}
+        >
+            <button type="submit">
+            <AiOutlineSearch className="search-icon" />
+            </button>
+            <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => {
+                handleContent(e);
+            }}
+            />
+        </form>
+        </div>
+    );
+    };
 
 ## Styling
 

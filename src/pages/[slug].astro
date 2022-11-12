@@ -17,23 +17,29 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.single;
 ---
 
-<Layout title={"Panda - " + frontmatter.title}>
-  <div class="mx-6">
+<Layout title={`${frontmatter.title} - Danial`}>
     <!-- About me -->
-    <section>
+    <section class="max-w-7xl mx-auto px-11 pb-11">
       <PageBanner text={frontmatter.title} />
       {frontmatter.blog ? 
         <a href="/blog">Go back to Blog</a> 
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.content}</p>
-        <Content /> 
+        <h1 class="mt-11 text-3xl font-bold md:text-5xl lg:text-6xl py-3 text-center">{frontmatter.title}</h1>
         :
         <a href="/projects">Go back to Projects</a> 
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.content}</p>
-        <img src={frontmatter.imgPath} alt={frontmatter.imgPath}>
-        <Content />
+        <h1 class="mt-11 text-3xl font-bold md:text-5xl lg:text-6xl py-3 text-center">{frontmatter.title}</h1>
+        <img src={frontmatter.thumbnail} alt={frontmatter.alt}>
+      <div class="p-6 bg-nav dark:bg-darkNav">
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Author(s):</span> {frontmatter.author}</p>
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Role:</span> {frontmatter.role}</p>
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Date:</span> {frontmatter.date}</p>
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Tools:</span> {frontmatter.tools}</p>
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Challenge: </span> {frontmatter.challenge}</p>
+        <p class='my-1'><span class="text-secondary dark:text-daSe">Solution: </span> {frontmatter.solution}</p>
+      </div>
       }
     </section>
-  </div>
+    <section class="max-w-7xl mx-auto px-11 pb-11 content">
+      <Content />
+    </section>
+
 </Layout>
