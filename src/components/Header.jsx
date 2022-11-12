@@ -109,7 +109,7 @@ const Header = () => {
             <ThemeToggle />
           </div>
           {/* <!-- Social Media Div -->  */}
-          <div className=" flex w-full flex-wrap items-center justify-center gap-2.5 pt-1 pb-11">
+          <div className=" mb-auto flex w-full flex-wrap items-center justify-center gap-2.5 pt-1 pb-11 md:mb-0">
             <a href="mailto:danial.daneshfar@gmail.com">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
